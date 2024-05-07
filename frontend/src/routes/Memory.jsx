@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Memory.css";
+import FavoriteBtn from "../components/FavoriteBtn";
 
 const Memory = () => {
   const { id } = useParams();
@@ -12,12 +13,14 @@ const Memory = () => {
 
   const [name, setName] = useState("");
   const [text, setText] = useState("");
+  const [favorite, setFav] = useState(false);
 
   useEffect(() => {
     const getMemory = async () => {
       const res = await axios.get(`/memories/${id}`);
       setMemory(res.data);
       setComments(res.data.comments);
+      setFav(res.data.favorite);
     };
     getMemory();
   }, []);
@@ -53,6 +56,7 @@ const Memory = () => {
       />
       <h2>{memory.title}</h2>
       <p>{memory.description}</p>
+      <FavoriteBtn />
       <div className="comment-form">
         <h3>Envie o seu comentário:</h3>
         <form onSubmit={handleSubmit}>

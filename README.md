@@ -51,5 +51,8 @@
 
 ![image](https://github.com/naridevlope/MemoriesProject/assets/135278772/0ce3167e-951c-4c22-9e2c-55507be41aba)
 
-
-
+<ul>
+  <li>Adicionado a funcionalidade de marcar como favorito</li>
+  <li>Adicionado filtro de pesquisa de memórias</li>
+  <li>Adicionado exclusão de comentários(Será implementado na próxima commit)</li>
+</ul>

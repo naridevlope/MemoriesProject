@@ -21,7 +21,15 @@
 }
 
 .memory img {
-  max-height: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.search-input {
+  width: 400px;
+  margin-top: 1.5rem;
+  position: relative;
+  left: 40%;
+  padding: 0.5rem;
 }

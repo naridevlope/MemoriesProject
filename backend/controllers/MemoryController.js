@@ -123,7 +123,9 @@ const toggleFavorite = async (req, res) => {
 
     await memory.save();
 
-    res.json({ msg: "Adicionada aos favoritos", memory });
+    memory.favorite
+      ? res.json({ msg: "Adicionado aos favoritos", memory })
+      : res.json({ msg: "Removida dos favoritos" });
   } catch (error) {
     console.log(error);
     res.status(500).send("Ocorreu um erro!");
